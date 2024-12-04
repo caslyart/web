@@ -1,0 +1,527 @@
+/*Style css*/
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo {
+    position: absolute; /* Absolute positioning to move the logo independently */
+    left: 56px;
+    top: 1px;
+}
+
+.img {
+    position: absolute;
+    left: 56px;
+    top:8px;
+    block-size: 56px;
+}
+
+.btn-connect {
+    position: absolute;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+}
+
+.btn-connect:hover {
+    background-color: #e55b00;
+}
+
+/* Quote Section Styling */
+
+.quote {
+    font-style: bold;
+    color: #333;
+    text-align: center;
+}
+
+
+
+/* Hero Section */
+.hero-section {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero-section h2 {
+    font-size: 36px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn-main {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.btn-main:hover {
+    background-color: #e55b00;
+}
+
+/* Featured NFTs Section */
+.featured-nfts {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.nft-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nft-card {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.nft-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.nft-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.nft-card p {
+    font-size: 16px;
+    color: #777;
+}
+
+
+
+/* Collection Section */
+.collection {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.collection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Search Tool */
+.search-tool {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn-search {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn-search:hover {
+    background-color: #e55b00;
+}
+
+/* NFT Gallery */
+.nft-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.nft-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+.nft-item:hover {
+    transform: translateY(-5px);
+}
+
+.nft-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.nft-title {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.page-link:hover {
+    background-color: #f4f4f4;
+}
+
+.page-dots {
+    margin: 0 5px;
+    font-size: 20px;
+    color: #666;
+}
+
+
+/* Basic styling for profile page */
+.user-info {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for user info */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.user-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ddd; /* Border around profile picture */
+    border-image: 80px;
+}
+
+
+.user-info h1 {
+    padding: 5px;
+}
+
+.user-info h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.user-info p {
+    color: #666; /* Subtle color for bio text */
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 12%;
+    
+}
+
+.user-info button {
+
+ position: absolute;
+ margin-left: 50%;
+
+}
+/* NFT Gallery */
+.user-nfts, .subscription-status {
+    margin-top: 20px;
+}
+
+.nft-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center gallery items */
+}
+
+.nft-card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff; /* Card background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Card shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.nft-card img {
+    width: 100%;
+    height: auto;
+}
+
+.nft-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.nft-card p {
+    color: #888; /* Subtle color for artist name */
+}
+
+/* Admin Features */
+.admin-features {
+    margin-top: 20px;
+}
+
+.admin-features button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Primary button color */
+    color: #fff; /* Button text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.admin-features button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+/* Subscription Status */
+.subscription-status {
+    padding: 20px;
+    background-color: #f1f1f1; /* Light background for status section */
+    border-radius: 8px;
+    text-align: center;
+}
+
+.subscription-status p {
+    font-size: 18px;
+}
+
+
+/* Forum Section */
+/* Posting Form */
+.posting-form {
+    padding: 20px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.post-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.file-upload {
+    margin-bottom: 10px;
+}
+
+.btn-post {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-post:hover {
+    background-color: #e55b00;
+}
+
+/* Forum Section */
+.forum {
+    padding: 40px 0;
+}
+
+.forum-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.forum-block {
+    width: 100%;
+}
+
+.forum-block h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.user-post {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.timestamp {
+    color: #666;
+    font-size: 14px;
+}
+
+.post-content {
+    font-size: 16px;
+    color: #333;
+}
+
+
+/*create profile page */ 
+
+
+.create-profile {
+    padding: 2rem 0;
+}
+
+.create-profile h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.create-profile form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="file"] {
+    display: block;
+}
+
+.btn-main {
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}

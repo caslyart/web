@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Art Collection - NFT Art Platform</title>
+    <link rel="stylesheet" href="website.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img class="img" src="dfd.png">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn-connect">Connect Wallet</button>
+        </div>
+    </nav>
+
+
+
+
+<form id="profile-form" enctype="multipart/form-data">
+    <label for="profile-pic">Profile Picture:</label>
+    <input type="file" id="profile-pic" name="profile-pic" accept="image/*" required aria-label="Profile Picture"><br><br>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required aria-label="Username"><br><br>
+
+    <label for="bio">Bio:</label>
+    <textarea id="bio" name="bio" rows="4" cols="50" aria-label="Bio"></textarea><br><br>
+
+    <button type="submit" aria-label="Save Changes">Save Changes</button>
+</form>
+
+<div class="container">
+    <form id="profile-form" enctype="multipart/form-data">
+        <!-- Form elements here -->
+    </form>
+</div>
+
+
+<script>
+    document.getElementById('profile-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('/update-profile', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                alert('Profile updated successfully!');
+                // Optionally, redirect or update UI here
+            } else {
+                alert(data.message || 'Failed to update profile.'); // Display server-sent message if available
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while updating the profile. Please try again.');
+        });
+    });
+</script>
+
+<script>
+    document.getElementById('profile-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+        const submitButton = this.querySelector('button[type="submit"]');
+        submitButton.disabled = true;  // Disable the button to prevent multiple submissions
+
+        fetch('/update-profile', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                alert('Profile updated successfully!');
+            } else {
+                alert(data.message || 'Failed to update profile.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while updating the profile. Please try again.');
+        })
+        .finally(() => {
+            submitButton.disabled = false;  // Re-enable the button
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Profile - NFT Art Platform</title>
+    <link rel="stylesheet" href="website.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img class="img" src="dfd.png">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn-connect">Connect Wallet</button>
+        </div>
+    </nav>
+
+    <!-- Profile Creation Section -->
+    <section class="create-profile">
+        <div class="container">
+            <h2>Create Your Profile</h2>
+            <form id="profile-form" action="create_profile.php" method="post">
+                <div class="form-group">
+                    <label for="profile-pic">Profile Picture:</label>
+                    <input type="file" id="profile-pic" name="profile-pic" accept="image/*" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                </div>
+                
+                 <!-- New Email Field -->
+    <div class="form-group">
+        <label for="user-email">Your Email Address:</label>
+        <input type="email" id="user-email" name="email" placeholder="Enter your email" required>
+    </div>
+    
+                <div class="form-group">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" placeholder="Tell us about yourself" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-main">Create Profile</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DC. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script>
+document.getElementById('profile-form').addEventListener('submit', function(event) {
+    // Example validation
+    const username = document.getElementById('username').value;
+    if (username.length < 3) {
+        alert('Username must be at least 3 characters long.');
+        event.preventDefault(); // Prevent form submission
+    }
+
+    // Example image preview
+    const profilePicInput = document.getElementById('profile-pic');
+    const file = profilePicInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '200px';
+            img.style.marginTop = '1rem';
+            document.querySelector('.create-profile').appendChild(img);
+        }
+        reader.readAsDataURL(file);
+    }
+});
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

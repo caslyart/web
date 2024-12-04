@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - NFT Art Platform</title>
+    <link rel="stylesheet" href="website.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img class="img" src="dfd.png">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn-connect">Connect Wallet</button>
+        </div>
+    </nav>
+
+    <!-- Profile Page Content -->
+    <section class="profile">
+        <div class="container">
+            <!-- User Information -->
+            <div class="user-info">
+                <img id="profile-pic" src="dfd.png" alt="Profile Picture">
+                <h1 id="username">Username</h1>
+                <p id="bio">Bio</p>
+                <button id="edit-profile-btn">Edit Profile</button>
+            </div>
+
+            <!-- NFTs Section -->
+            <div class="user-nfts">
+                <h2>Your NFTs</h2>
+                <div id="nft-gallery" class="nft-gallery">
+                    <!-- NFTs will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <!-- Subscription Status -->
+            <div class="subscription-status">
+                <h2>Subscription Status</h2>
+                <p id="subscription-status">Active</p>
+            </div>
+
+            
+            <!-- Connected Email Display -->
+    <div class="connected-email">
+        <p>Connected Email: <span id="connected-email">user@example.com</span></p>
+        <!-- Optional: Add a button to disconnect/change the email -->
+        <button id="disconnect-email" class="btn-secondary">Disconnect Email</button>
+    </div>
+
+            <!-- Admin Features (if applicable) -->
+            <div class="admin-features">
+                <h2>Admin Features</h2>
+                <button id="upload-nft-btn">Upload NFT</button>
+                <button id="feature-nft-btn">Feature NFT</button>
+                <button id="create-collection-btn">Create Collection</button>
+                <button id="grant-perks-btn">Grant Perks</button>
+                <button id="assign-badge-btn">Assign Badge</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Divine Casly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+    // Load user profile data
+    fetch('/get-profile')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('username').textContent = data.username;
+            document.getElementById('bio').textContent = data.bio;
+            document.getElementById('profile-pic').src = data.profilePicUrl;
+            document.getElementById('subscription-status').textContent = data.subscriptionStatus;
+            
+            // Load user NFTs
+            const nftGallery = document.getElementById('nft-gallery');
+            data.nfts.forEach(nft => {
+                const nftCard = `
+                    <div class="nft-card">
+                        <img src="${nft.imageUrl}" alt="${nft.title}">
+                        <h3>${nft.title}</h3>
+                        <p>${nft.artistName}</p>
+                    </div>
+                `;
+                nftGallery.innerHTML += nftCard;
+            });
+
+            // Check if user is admin and show admin features
+            if (data.isAdmin) {
+                document.querySelector('.admin-features').style.display = 'block';
+            }
+        })
+        .catch(error => console.error('Error loading profile:', error));
+
+    // Event listeners for profile actions
+    document.getElementById('edit-profile-btn').addEventListener('click', function() {
+        window.location.href = 'edit-profile.html'; // Link to edit profile page
+    });
+
+    document.getElementById('update-profile-btn').addEventListener('click', function() {
+        // Logic for updating profile (e.g., send updated data to server)
+    });
+
+    // Admin actions
+    document.getElementById('upload-nft-btn').addEventListener('click', function() {
+        window.location.href = 'upload-nft.html'; // Link to NFT upload page
+    });
+
+    document.getElementById('feature-nft-btn').addEventListener('click', function() {
+        // Logic to feature an NFT
+    });
+
+    document.getElementById('create-collection-btn').addEventListener('click', function() {
+        window.location.href = 'create-collection.html'; // Link to collection creation page
+    });
+
+    document.getElementById('grant-perks-btn').addEventListener('click', function() {
+        // Logic to grant perks to users
+    });
+
+    document.getElementById('assign-badge-btn').addEventListener('click', function() {
+        // Logic to assign badges
+    });
+});
+
+
+    </script> <!-- Link to your JavaScript file -->
+</body>
+</html>

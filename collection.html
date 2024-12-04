@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Art Collection - NFT Art Platform</title>
+    <link rel="stylesheet" href="collection.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img class="img" src="dfd.png">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn-connect">Connect Wallet</button>
+        </div>
+    </nav>
+
+    <!-- Collection Section -->
+    <section class="collection">
+        <div class="container">
+            <h2>AI Art Collection</h2>
+            <!-- Search Tool -->
+            <div class="search-tool">
+                <input type="text" placeholder="Search in AI Art Collection..." class="search-input">
+                <button class="btn-search">Search</button>
+            </div>
+
+            <!-- NFT Items -->
+            <div class="nft-gallery">
+                <!-- Example NFT Item -->
+                <div class="nft-item">
+                    <img src="nft1.png" alt="NFT 1">
+                    <p class="nft-title">AI Generated Art #1</p>
+                </div>
+                <!-- Repeat for more NFTs -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-link">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-link">Next</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DC. All rights reserved.</p>
+        </div>
+    </footer>
+
+<!--Dynamic page loadin-->
+
+<script>
+    
+    let currentPage = 1;
+const itemsPerPage = 10;
+
+function loadItems(page) {
+    fetch(`/api/items?page=${page}&limit=${itemsPerPage}`)
+        .then(response => response.json())
+        .then(data => {
+            // Update the page with new items
+            const itemContainer = document.getElementById('item-container');
+            itemContainer.innerHTML = ''; // Clear existing items
+
+            data.items.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'item';
+                itemElement.innerHTML = `<h4>${item.title}</h4><p>${item.description}</p>`;
+                itemContainer.appendChild(itemElement);
+            });
+
+            // Update pagination controls
+            updatePaginationControls(data.totalPages);
+        });
+}
+
+function updatePaginationControls(totalPages) {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.textContent = i;
+        pageLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            currentPage = i;
+            loadItems(currentPage);
+        });
+        pagination.appendChild(pageLink);
+    }
+}
+
+// Initial load
+loadItems(currentPage);
+
+</script>
+
+<!---Search functionality--->
+
+
+
+
+
+
+
+
+</body>
+</html>
