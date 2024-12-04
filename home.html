@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Art Platform</title>
+    <link rel="stylesheet" href="website.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img class="img"; src="dfd.png"> 
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn-connect">Connect Wallet</button>
+        </div>
+    </nav>
+
+<!-- quote-section -->
+    <section class="quote-section">
+        <div class="quote">
+            <h3>It was not about art anymore, it was about money.</h3>
+            <p>-Divine Casly</p>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h2>Discover and Collect Digital Art NFTs</h2>
+            <p>Join the world of digital art and explore unique collectibles</p>
+            <a href="create-profile.html" class="btn-main">Get Started</a>
+        
+    </header>
+
+    <!-- Featured NFTs Section -->
+<section class="featured-nfts">
+    <div class="container">
+        <h2>Featured NFTs</h2>
+        <div class="nft-gallery" id="nft-gallery">
+            <!-- NFT cards will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
+
+<script>
+// JavaScript to load featured NFTs dynamically
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/get-featured-nfts')
+        .then(response => response.json())
+        .then(data => {
+            const gallery = document.getElementById('nft-gallery');
+            gallery.innerHTML = ''; // Clear existing content
+            data.featuredNfts.forEach(nft => {
+                const nftCard = `
+                    <div class="nft-card">
+                        <img src="${nft.imageUrl}" alt="${nft.title}">
+                        <h3>${nft.title}</h3>
+                        <p>${nft.artistName}</p>
+                    </div>
+                `;
+                gallery.innerHTML += nftCard;
+            });
+        })
+        .catch(error => console.error('Error loading NFTs:', error));
+
+        document.getElementById('nft-gallery').innerHTML = '<p>Failed to load featured NFTs. Please try again later.</p>';
+
+});
+
+/**--dummy data--/
+
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.getElementById('nft-gallery');
+    gallery.innerHTML = ''; // Clear existing content
+    const dummyData = [
+        { imageUrl: 'nft1.jpg', title: 'NFT Title 1', artistName: 'Artist Name 1' },
+        { imageUrl: 'nft2.jpg', title: 'NFT Title 2', artistName: 'Artist Name 2' },
+        { imageUrl: 'nft3.jpg', title: 'NFT Title 3', artistName: 'Artist Name 3' },
+    ];
+    dummyData.forEach(nft => {
+        const nftCard = `
+            <div class="nft-card">
+                <img src="${nft.imageUrl}" alt="${nft.title}">
+                <h3>${nft.title}</h3>
+                <p>${nft.artistName}</p>
+            </div>
+        `;
+        gallery.innerHTML += nftCard;
+    });
+});
+
+
+</script>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Divine Casly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
