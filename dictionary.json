@@ -16,6 +16,48 @@
           "zh": "苹果",
           "pinyin": "píngguǒ",
           "audio": "apple"
+        },
+        {
+          "eng": "Table",
+          "fr": "Table",
+          "zh": "桌子",
+          "pinyin": "zhuōzi",
+          "audio": "table"
+        },
+        {
+          "eng": "Chair",
+          "fr": "Chaise",
+          "zh": "椅子",
+          "pinyin": "yǐzi",
+          "audio": "chair"
+        },
+        {
+          "eng": "Lamp",
+          "fr": "Lampe",
+          "zh": "灯",
+          "pinyin": "dēng",
+          "audio": "lamp"
+        },
+        {
+          "eng": "Clock",
+          "fr": "Horloge",
+          "zh": "时钟",
+          "pinyin": "shízhōng",
+          "audio": "clock"
+        },
+        {
+          "eng": "Mirror",
+          "fr": "Miroir",
+          "zh": "镜子",
+          "pinyin": "jìngzi",
+          "audio": "mirror"
+        },
+        {
+          "eng": "Cushion",
+          "fr": "Coussin",
+          "zh": "靠垫",
+          "pinyin": "kàodiàn",
+          "audio": "cushion"
         }
       ]
     },
